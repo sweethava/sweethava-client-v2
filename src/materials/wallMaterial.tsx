@@ -5,10 +5,10 @@ const normalTexture = TLoader.load('/textures/wall/normal.jpg')
 
 normalTexture.wrapS = normalTexture.wrapT = RepeatWrapping
 normalTexture.offset.set(0, 0)
-normalTexture.repeat.set(6, 6)
+normalTexture.repeat.set(10, 10)
 
 const WallMaterial = new MeshStandardMaterial({
-    color: '#b3b3b3',
+    color: '#C2C2C2',
     roughness: 1,
     normalMap: normalTexture
 })

@@ -9,27 +9,25 @@ import RoomLight from '../../components/roomLight/roomLight'
 import { Physics } from '@react-three/rapier'
 import Player from '../../components/player/player'
 import { useEffect, useRef } from 'react'
+import Stand from '../../components/stand/stand'
+import CHIcon from '../../components/chIcon/chIcon'
 
 const MainScene = () => {
     useEffect(() => {
-        console.log(document.pointerLockElement);
-
         document.exitPointerLock()
     }, [])
 
     return (
         <div className={styles.scene}>
             <Canvas shadows>
-                <ambientLight color={'#fff'} intensity={0.4} />
                 <Physics>
                     <Room />
                     <Player />
+                    <CHIcon />
                 </Physics>
                 <RoomLight />
                 <DefaultEnvironment />
-                <PointerLockControls makeDefault onLock={() => {
-                    console.log('LOCK')
-                }} />
+                <PointerLockControls makeDefault />
             </Canvas>
         </div>
     )

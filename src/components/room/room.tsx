@@ -5,7 +5,6 @@ import GlassMaterial from "../../materials/glassMaterial"
 import { CuboidCollider, RigidBody } from '@react-three/rapier'
 import CarpetMaterial from "../../materials/carpetMaterial"
 import WallMaterial from "../../materials/wallMaterial"
-import { FurnitureBlack, FurnitureWhite } from "../../materials/furnitureMaterial"
 
 const Room = () => {
     // @ts-ignore
@@ -23,10 +22,9 @@ const Room = () => {
     materials.FabricSecond.roughness = 1
     materials.GlassRegular = GlassMaterial
 
-    // materials.Mirror = MirrorMaterial
     materials.Mirror = GlassMaterial
-    materials.BlackScreen.metalness = 0.9
-    materials.BlackScreen.roughness = 0.1
+    materials.BlackScreen.metalness = 1
+    materials.BlackScreen.roughness = 0
 
     return (
         <group dispose={null}>

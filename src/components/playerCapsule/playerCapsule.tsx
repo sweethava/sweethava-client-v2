@@ -6,6 +6,7 @@ import { RigidBody, RapierRigidBody, CapsuleCollider } from '@react-three/rapier
 import { useRef } from 'react'
 import { Euler, Quaternion, Vector3 } from 'three'
 import { PlayerHeight, PlayerSpeed, PlayerWidth } from '../../config/playerConfig'
+import LiveEnvironment from '../liveEnvironment/liveEnvironment'
 
 const PlayerCapsule = () => {
     const player = useRef<RapierRigidBody>(null!)

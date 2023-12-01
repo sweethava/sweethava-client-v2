@@ -1,15 +1,24 @@
 'use client'
 
+import { useHelper } from "@react-three/drei"
+import { useRef } from "react"
+import { PointLightHelper } from "three"
+
 const RoomLight = () => {
+    const ref = useRef(null!)
+
+    useHelper(ref, PointLightHelper)
 
     return (
         <group position-y={2.2}>
             <pointLight
                 castShadow
-                decay={1.5}
-                intensity={2.5}
-                shadow-mapSize-height={1024}
-                shadow-mapSize-width={1024}
+                distance={5}
+                intensity={5}
+                shadow-mapSize-height={2048}
+                shadow-mapSize-width={2048}
+                shadow-bias={-0.0001}
+                ref={ref}
             />
         </group>
     )
