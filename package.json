@@ -1,0 +1,30 @@
+{
+  "name": "sweethava-client-v2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.89.0",
+    "@react-three/fiber": "^8.15.11",
+    "@react-three/postprocessing": "^2.15.11",
+    "@react-three/rapier": "^1.1.2",
+    "@types/three": "^0.158.3",
+    "next": "14.0.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "sass": "^1.69.5",
+    "three": "^0.159.0",
+    "zustand": "^4.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  }
+}

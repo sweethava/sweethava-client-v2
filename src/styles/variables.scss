@@ -1,0 +1,177 @@
+$color: #2d64fc;
+$color-dark: #4375ff;
+$orange: #e64b0f;
+$orange-dark: #eb6b39;
+$red: #e60f2d;
+$red-dark: #f74058;
+$green: #09c256;
+$green-dark: #12d864;
+$basic-dark: #100d38;
+
+// Sizes
+:root {
+    // Header
+    --header: 8rem;
+
+    // Stick
+    --stick: 5rem;
+
+    // Blur
+    --blur: 60px;
+
+    // General sizes
+    --rem: 14px;
+
+    // Text sizes
+    --fz-h1: 4rem;
+    --fz-h2: 3.6rem;
+    --fz-h3: 3.2rem;
+    --fz-h4: 2.8rem;
+    --fz-h5: 2.4rem;
+    --fz-h6: 2rem;
+    --fz-large: 1.7rem;
+    --fz-larger: 1.6rem;
+    --fz-regular: 1.5rem;
+    --fz-smaller: 1.4rem;
+    --fz-small: 1.3rem;
+
+    // Line Height
+    --lh-regular: 1.6;
+    --lh-title: 1.3;
+
+    // Container
+    --container: 80rem;
+
+    // Field
+    --field: 4.5rem;
+    --field-smaller: 4rem;
+    --field-small: 3.5rem;
+    --field-larger: 5rem;
+    --field-large: 5.5rem;
+
+    // Checkbox
+    --checkbox: 2rem;
+
+    // Toggler
+    --toggler-height: 2rem;
+    --toggler-width: 3.5rem;
+
+    // Radius
+    --rad: 1rem;
+    --rad-smaller: 0.8rem;
+    --rad-small: 0.6rem;
+    --rad-larger: 1.2rem;
+    --rad-large: 1.4rem;
+}
+
+// Colors
+:root {
+    // Border
+    --border-regular: rgba(255, 255, 255, 0.06);
+
+    // Background
+    --bg-regular: #0a0a0a;
+    --bg-transparent: rgba(22, 22, 26, 0.8);
+    --bg-grey: rgba(255, 255, 255, 0.07);
+    --bg-grey-dark: rgba(255, 255, 255, 0.12);
+    --bg-grey-light: rgba(255, 255, 255, 0.03);
+    --bg-regular-op: #fff;
+
+    // Switcher
+    --switcher-bg: var(--bg-grey);
+    --switcher-active-bg: var(--bg-grey-dark);
+
+    // Toggler
+    --toggler-bg: #fff;
+
+    // Text colors
+    --text-regular-color: #d7d7d7;
+    --text-regular-op-color: #111;
+    --text-grey-color: rgba(255, 255, 255, 0.6);
+    --text-greylight-color: rgba(255, 255, 255, 0.4);
+
+    // Theme color
+    --theme: #{$color-dark};
+    --theme-dark: #{darken($color-dark, 10%)};
+    --theme-light: #{lighten($color-dark, 10%)};
+    --theme-focus: #{transparentize($color-dark, 0.7)};
+    --theme-opacity: #{transparentize($color-dark, 0.8)};
+
+    // Theme orange
+    --orange: #{$orange-dark};
+    --orange-dark: #{darken($orange-dark, 10%)};
+    --orange-light: #{lighten($orange-dark, 10%)};
+    --orange-focus: #{transparentize($orange-dark, 0.7)};
+    --orange-opacity: #{transparentize($orange-dark, 0.8)};
+
+    // Theme green
+    --green: #{$green-dark};
+    --green-dark: #{darken($green-dark, 10%)};
+    --green-light: #{lighten($green-dark, 10%)};
+    --green-focus: #{transparentize($green-dark, 0.7)};
+    --green-opacity: #{transparentize($green-dark, 0.8)};
+
+    // Theme red
+    --red: #{$red-dark};
+    --red-dark: #{darken($red-dark, 10%)};
+    --red-light: #{lighten($red-dark, 10%)};
+    --red-focus: #{transparentize($red-dark, 0.7)};
+    --red-opacity: #{transparentize($red-dark, 0.8)};
+
+    // Apply
+    color: var(--text-regular-color);
+    color-scheme: dark;
+}
+
+.redTheme,
+[color="red"] {
+    --theme: var(--red);
+    --theme-dark: var(--red-dark);
+    --theme-light: var(--red-light);
+    --theme-focus: var(--red-focus);
+    --theme-opacity: var(--red-opacity);
+}
+
+.orangeTheme,
+[color="orange"] {
+    --theme: var(--orange);
+    --theme-dark: var(--orange-dark);
+    --theme-light: var(--orange-light);
+    --theme-focus: var(--orange-focus);
+    --theme-opacity: var(--orange-opacity);
+}
+
+.greenTheme,
+[color="green"] {
+    --theme: var(--green);
+    --theme-dark: var(--green-dark);
+    --theme-light: var(--green-light);
+    --theme-focus: var(--green-focus);
+    --theme-opacity: var(--green-opacity);
+}
+
+@media (max-width: 768px) {
+
+    :root {
+        --container: 48rem;
+        --rem: 1.8vw;
+        --fz-h1: 4.2rem;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+
+    :root {
+        --rem: 1vw;
+    }
+
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+
+    :root {
+        --rem: 0.7vw;
+    }
+
+}

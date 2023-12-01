@@ -1,0 +1,88 @@
+html {
+    font-size: var(--rem);
+    overflow-y: scroll;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    background: var(--bg-regular);
+    overflow-x: hidden;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+    height: 100%;
+}
+
+a {
+    color: var(--theme);
+    text-decoration: none;
+}
+
+input,
+textarea,
+select,
+button {
+    appearance: none;
+    outline: none;
+}
+
+body,
+input,
+button,
+textarea,
+select {
+    font-family: var(--font);
+    font-weight: 400;
+    color: var(--text-regular-color);
+    line-height: var(--lh-regular);
+    font-size: var(--fz-regular);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    line-height: var(--lh-title);
+    font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+blockquote,
+ol {
+    padding: 0;
+    margin: 0;
+}
+
+@mixin title($index) {
+
+    h#{$index},
+    .h#{$index} {
+        font-size: var(--fz-h#{$index});
+    }
+}
+
+@for $i from 1 through 6 {
+    @include title($i);
+}
