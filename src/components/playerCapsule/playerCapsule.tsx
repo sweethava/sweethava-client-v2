@@ -5,39 +5,34 @@ import { useFrame } from '@react-three/fiber'
 import { RigidBody, RapierRigidBody, CapsuleCollider } from '@react-three/rapier'
 import { useRef } from 'react'
 import { Euler, Quaternion, Vector3 } from 'three'
-import { PlayerHeight, PlayerSpeed, PlayerWidth } from '../../config/playerConfig'
+import { PlayerHeight, PlayerSmooth, PlayerSpeed, PlayerWidth } from '../../config/playerConfig'
 import LiveEnvironment from '../liveEnvironment/liveEnvironment'
+
+let lastVertical = 0
+let lastHorizontal = 0
 
 const PlayerCapsule = () => {
     const player = useRef<RapierRigidBody>(null!)
     const [subscribeKeys, getKeys] = useKeyboardControls()
 
     useFrame((state, delta) => {
+        if (!player.current) return
+
         const camera = state.camera
+        const cameraRotation = camera.rotation
         const playerPosition = player.current.translation()
         const { forward, backward, leftward, rightward } = getKeys()
         const speed = PlayerSpeed * delta
 
         camera.position.set(playerPosition.x, playerPosition.y + PlayerHeight / 2, playerPosition.z)
 
-        let velocity = new Vector3(0, 0, 0);
-        let cameraDirection = new Vector3();
-        camera.getWorldDirection(cameraDirection);
-
-        let forwardMove = new Vector3();
-        forwardMove.setFromMatrixColumn(camera.matrix, 0);
-        forwardMove.crossVectors(camera.up, forwardMove);
-
-        let rightMove = new Vector3();
-        rightMove.setFromMatrixColumn(camera.matrix, 0);
-
-        let [horizontal, vertical] = [0, 0];
+        let [horizontal, vertical] = [0, 0]
 
         if (forward) {
-            vertical += 1;
+            vertical -= 1;
         }
         if (backward) {
-            vertical -= 1;
+            vertical += 1;
         }
         if (rightward) {
             horizontal += 1;
@@ -46,17 +41,16 @@ const PlayerCapsule = () => {
             horizontal -= 1;
         }
 
-        if (horizontal !== 0 && vertical !== 0) {
-            velocity
-                .add(forwardMove.clone().multiplyScalar(speed * vertical))
-                .add(rightMove.clone().multiplyScalar(speed * horizontal));
-        } else if (horizontal !== 0) {
-            velocity.add(rightMove.clone().multiplyScalar(speed * horizontal));
-        } else if (vertical !== 0) {
-            velocity.add(forwardMove.clone().multiplyScalar(speed * vertical));
+        if (vertical == 0 && horizontal == 0) {
+            vertical = lastVertical * PlayerSmooth
+            horizontal = lastHorizontal * PlayerSmooth
         }
 
-        velocity.clampLength(-speed, speed);
+        lastVertical = vertical
+        lastHorizontal = horizontal
+
+        let velocity = new Vector3(horizontal, 0, vertical).multiplyScalar(speed).applyEuler(cameraRotation)
+        velocity.y = 0
 
         player.current.setLinvel(velocity, true)
     })
@@ -67,7 +61,9 @@ const PlayerCapsule = () => {
             position={[-1, 0.5, 1]}
             ref={player}
             enabledRotations={[false, false, false]}
+            name='Player'
         >
+            <raycaster args={[new Vector3(0, 0, 0), new Vector3(-1, 0, 0)]} />
             <CapsuleCollider args={[PlayerHeight / 2, PlayerWidth / 2]} />
         </RigidBody>
     )

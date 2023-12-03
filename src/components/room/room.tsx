@@ -2,9 +2,11 @@
 
 import { useGLTF } from "@react-three/drei"
 import GlassMaterial from "../../materials/glassMaterial"
-import { CuboidCollider, RigidBody } from '@react-three/rapier'
+import { CuboidCollider, RigidBody, interactionGroups } from '@react-three/rapier'
 import CarpetMaterial from "../../materials/carpetMaterial"
 import WallMaterial from "../../materials/wallMaterial"
+import Stands from "../stands/stands"
+import { GameEnvIntensity } from "../../config/gameConfig"
 
 const Room = () => {
     // @ts-ignore
@@ -13,6 +15,7 @@ const Room = () => {
     for (const key in materials) {
         const material = materials[key]
         material.side = 0
+        material.envMapIntensity = GameEnvIntensity
     }
 
     materials.Floor = CarpetMaterial
@@ -49,12 +52,12 @@ const Room = () => {
                     geometry={nodes.Plane017_1.geometry}
                     material={materials.Floor}
                 />
-                <mesh
+                {/* <mesh
                     castShadow
                     receiveShadow
                     geometry={nodes.Plane017_2.geometry}
                     material={materials.Roof}
-                />
+                /> */}
                 <mesh
                     castShadow
                     receiveShadow
@@ -74,7 +77,7 @@ const Room = () => {
                     material={materials.GlassRegular}
                 />
 
-                // Colliders
+                {/* Colliders */}
 
                 <RigidBody
                     position={[0, -0.1, 0]}
@@ -334,6 +337,8 @@ const Room = () => {
                     </group>
                 </group>
             </RigidBody>
+
+            <Stands />
         </group>
     )
 }
