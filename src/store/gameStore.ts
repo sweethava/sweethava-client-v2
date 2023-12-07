@@ -10,7 +10,8 @@ interface CounterState {
     cameraTargetPosition: [number, number, number],
     lockCamera: boolean,
     zoom: number,
-    showGoBack: boolean
+    showGoBack: boolean,
+    interactiveMode: boolean
 }
 
 const initialState: CounterState = {
@@ -19,7 +20,8 @@ const initialState: CounterState = {
     cameraTargetPosition: GameInitialTargetPosition,
     lockCamera: false,
     zoom: GameCameraZoom,
-    showGoBack: false
+    showGoBack: false,
+    interactiveMode: false
 }
 
 export const gameSlice = createSlice({
@@ -41,13 +43,16 @@ export const gameSlice = createSlice({
         setShowGoBack: (state, action: PayloadAction<boolean>) => {
             state.showGoBack = action.payload
         },
+        setInteractiveMode: (state, action: PayloadAction<boolean>) => {
+            state.interactiveMode = action.payload
+        },
         setZoom: (state, action: PayloadAction<number>) => {
             state.zoom = action.payload
         },
     },
 })
 
-export const { setIsOnDesktop, setCameraPosition, setLockCamera, setZoom, setCameraTargetPosition, setShowGoBack } = gameSlice.actions
+export const { setIsOnDesktop, setCameraPosition, setLockCamera, setZoom, setCameraTargetPosition, setShowGoBack, setInteractiveMode } = gameSlice.actions
 
 export const getCameraPosition = (state: RootState) => state.game.cameraPosition
 

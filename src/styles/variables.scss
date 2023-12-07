@@ -20,7 +20,7 @@ $basic-dark: #100d38;
     --blur: 60px;
 
     // General sizes
-    --rem: 14px;
+    --rem: 20px;
 
     // Text sizes
     --fz-h1: 4rem;
@@ -67,10 +67,12 @@ $basic-dark: #100d38;
 // Colors
 :root {
     // Border
-    --border-regular: rgba(255, 255, 255, 0.06);
+    --border-regular: rgba(255, 255, 255, 0.2);
+    --border-dark: rgba(255, 255, 255, 0.6);
 
     // Background
     --bg-regular: #0a0a0a;
+    --bg-contrast: rgba(0, 0, 0, 0.1);
     --bg-transparent: rgba(22, 22, 26, 0.8);
     --bg-grey: rgba(255, 255, 255, 0.07);
     --bg-grey-dark: rgba(255, 255, 255, 0.12);
@@ -85,7 +87,7 @@ $basic-dark: #100d38;
     --toggler-bg: #fff;
 
     // Text colors
-    --text-regular-color: #d7d7d7;
+    --text-regular-color: #fff;
     --text-regular-op-color: #111;
     --text-grey-color: rgba(255, 255, 255, 0.6);
     --text-greylight-color: rgba(255, 255, 255, 0.4);

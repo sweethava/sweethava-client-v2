@@ -10,6 +10,7 @@ import SelectionBound from '../../components/selectionBound/selectionBound'
 import Desktop from '../../components/desktop/desktop'
 import { Vector3 } from 'three'
 import Controls from '../../components/controls/controls'
+import GameUI from '../../components/ui/gameUI/gameUI'
 
 const MainScene = () => {
     return (
@@ -34,8 +35,8 @@ const MainScene = () => {
 
                     <DefaultEnvironment />
                 </Canvas>
+                <GameUI />
             </Suspense>
-
         </div>
     )
 }

@@ -1,0 +1,49 @@
+.button {
+    pointer-events: all;
+    background: var(--bg-contrast);
+    backdrop-filter: blur(var(--blur));
+    border: 2px solid var(--border-regular);
+    border-radius: var(--rad);
+    overflow: hidden;
+    height: var(--field);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &.icon:not(.text) {
+        width: var(--field);
+    }
+
+    &.text {
+        padding: 0 0.8em;
+    }
+
+    .inner {
+        display: flex;
+        align-items: center;
+
+        .icon {
+            display: flex;
+            font-size: 1.6em;
+
+            &:not(:last-child) {
+                margin-right: 0.2em;
+            }
+
+        }
+
+        .text {
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+    }
+
+    &:hover {
+        background: none;
+        border-color: var(--border-dark);
+    }
+
+}
