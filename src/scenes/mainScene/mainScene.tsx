@@ -2,37 +2,37 @@
 
 import styles from './mainScene.module.scss'
 import { Canvas } from "@react-three/fiber"
-import { CameraControls, Fisheye, PointerLockControls, Select } from "@react-three/drei"
-import Room from '../../components/room/room'
 import DefaultEnvironment from '../../components/defaultEnvironment/defaultEnvironment'
-import RoomLight from '../../components/roomLight/roomLight'
-import { Physics } from '@react-three/rapier'
-import Player from '../../components/player/player'
-import { useEffect, Suspense } from 'react'
-import { GameFlyMode, GameGravity, GameLowGravity, GamePhysicsDebug } from '../../config/gameConfig'
-import { Perf } from 'r3f-perf'
+import { Suspense } from 'react'
+import { GameCameraZoom, GameInitialPosition } from '../../config/gameConfig'
+import Room from '../../components/room/room'
+import SelectionBound from '../../components/selectionBound/selectionBound'
+import Desktop from '../../components/desktop/desktop'
+import { Vector3 } from 'three'
+import Controls from '../../components/controls/controls'
 
 const MainScene = () => {
-    useEffect(() => {
-        document.exitPointerLock()
-    }, [])
-
     return (
         <div className={styles.scene}>
 
             <Suspense>
                 <Canvas
+                    orthographic
                     shadows
-                    frameloop={"demand"}
+                    dpr={[1, 1.5]}
+                    camera={{
+                        position: new Vector3(...GameInitialPosition),
+                        zoom: GameCameraZoom,
+                    }}
                 >
-                    <Perf />
-                    <Physics gravity={GameGravity ? GameLowGravity ? [0, -0.5, 0] : undefined : [0, 0, 0]} debug={GamePhysicsDebug}>
+                    <SelectionBound>
                         <Room />
-                        {GameFlyMode ? null : <Player />}
-                    </Physics>
-                    <RoomLight />
+                        <Desktop />
+                    </SelectionBound>
+
+                    <Controls />
+
                     <DefaultEnvironment />
-                    {GameFlyMode ? <CameraControls makeDefault /> : <PointerLockControls makeDefault />}
                 </Canvas>
             </Suspense>
 

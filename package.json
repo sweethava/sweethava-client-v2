@@ -13,19 +13,23 @@
     "@react-three/fiber": "^8.15.11",
     "@react-three/postprocessing": "^2.15.11",
     "@react-three/rapier": "^1.1.2",
+    "@reduxjs/toolkit": "^2.0.1",
     "@types/three": "^0.158.3",
+    "gsap": "^3.12.3",
     "next": "14.0.3",
     "r3f-perf": "^7.1.2",
     "react": "^18",
     "react-dom": "^18",
+    "react-redux": "^9.0.2",
     "sass": "^1.69.5",
-    "three": "^0.159.0",
-    "zustand": "^4.4.7"
+    "three": "^0.159.0"
   },
   "devDependencies": {
+    "@types/gsap": "^3.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-redux": "^7.1.32",
     "typescript": "^5"
   }
 }
