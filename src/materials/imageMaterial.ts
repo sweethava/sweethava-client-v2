@@ -2,7 +2,7 @@ import { MeshStandardMaterial, RepeatWrapping, Vector2 } from "three"
 import { TLoader } from "../utils/loaders"
 import { GameEnvIntensity } from "../config/gameConfig"
 
-const reactImage = TLoader.load('/textures/images/react.jpg')
+const reactImage = TLoader.load('textures/images/react.jpg')
 const tsImage = TLoader.load('/textures/images/ts.jpg')
 const nodeImage = TLoader.load('/textures/images/node.jpg')
 const jsImage = TLoader.load('/textures/images/js.jpg')
@@ -21,39 +21,25 @@ const ImageMaterialBasic = {
 
 export const ReactImageMaterial = new MeshStandardMaterial({
     ...ImageMaterialBasic,
-    map: reactImage,
+    // map: reactImage,
 })
 
 export const TSImageMaterial = new MeshStandardMaterial({
     ...ImageMaterialBasic,
-    map: tsImage
+    // map: tsImage
 })
 
 export const NodeMaterial = new MeshStandardMaterial({
     ...ImageMaterialBasic,
-    map: nodeImage
+    // map: nodeImage
 })
 
 export const JSMaterial = new MeshStandardMaterial({
     ...ImageMaterialBasic,
-    map: jsImage
+    // map: jsImage
 })
 
 export const CSMaterial = new MeshStandardMaterial({
     ...ImageMaterialBasic,
-    map: csImage
+    // map: csImage
 })
-
-function* ImagesQueue() {
-    yield TSImageMaterial
-    yield NodeMaterial
-    yield ReactImageMaterial
-    yield JSMaterial
-    yield CSMaterial
-}
-
-const queue = ImagesQueue()
-
-export const GetImageMaterial = () => {
-    return queue.next().value || ReactImageMaterial
-}

@@ -8,7 +8,7 @@ import { SetMaterials } from "../../utils/materials"
 
 const Room = () => {
     // @ts-ignore
-    const { nodes, materials } = useGLTF("/gltf/room2.glb")
+    const { nodes, materials } = useGLTF("gltf/room2.glb")
 
     useEffect(() => {
         SetMaterials(materials)
@@ -35,6 +35,24 @@ const Room = () => {
                 material={materials.Wood}
                 position={[-0.943, 0.617, 0.127]}
             />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <group position={[0.324, 1.434, -0.952]}>
                 <mesh
                     castShadow
@@ -505,6 +523,9 @@ const Room = () => {
                     material={materials.BookPaper}
                 />
             </group>
+
+
+
             <group position={[-1.933, 3.042, 0.775]} rotation={[0.048, 0, 0]}>
                 <mesh
                     castShadow
@@ -611,6 +632,9 @@ const Room = () => {
                     material={CSMaterial}
                 />
             </group>
+
+
+
             <group position={[-1.528, 2.47, 1.565]}>
                 <mesh
                     castShadow
@@ -634,6 +658,13 @@ const Room = () => {
                 rotation={[-0.013, 0.054, 0.001]}
                 scale={0.708}
             />
+
+
+
+
+
+
+
             <group position={[1.372, 0.786, -1.452]}>
                 <mesh
                     castShadow
@@ -1589,6 +1620,22 @@ const Room = () => {
                     scale={0.175}
                 />
             </mesh>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <mesh
                 castShadow
                 receiveShadow
