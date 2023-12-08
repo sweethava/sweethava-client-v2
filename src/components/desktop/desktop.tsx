@@ -2,16 +2,18 @@
 
 import { useEffect } from "react"
 import { SetMaterials } from "../../utils/materials"
-import { useGLTF } from "@react-three/drei"
+import { Html, useGLTF } from "@react-three/drei"
 import HoverHighlight from "../hoverHighlight/hoverHighlight"
 import { useAppDispatch, useAppSelector } from "../../hooks/storeHooks"
 import { setCameraPosition, setCameraTargetPosition, setInteractiveMode, setIsOnDesktop, setLockCamera, setShowGoBack, setZoom } from "../../store/gameStore"
 import { GameCameraZoomSpeed } from "../../config/gameConfig"
+import styles from './desktop.module.scss'
+import clsx from "clsx"
 
 const Desktop = () => {
     // @ts-ignore
     const { nodes, materials } = useGLTF("/gltf/display.glb")
-    const { interactiveMode } = useAppSelector(store => store.game)
+    const { interactiveMode, isOnDesktop } = useAppSelector(store => store.game)
     const dispatch = useAppDispatch()
 
     useEffect(() => {
@@ -51,7 +53,19 @@ const Desktop = () => {
                         receiveShadow
                         geometry={nodes.Plane011_1.geometry}
                         material={materials.Screen}
-                    />
+                    >
+                        <Html
+                            className={clsx(styles.wrapper, isOnDesktop ? styles.show : null)}
+                            castShadow
+                            receiveShadow
+                            occlude="raycast"
+                            transform
+                            position={[0.01, 0.435, 0]}
+                            scale={isOnDesktop ? 0.05 : 0}
+                        >
+                            <h1>Test</h1>
+                        </Html>
+                    </mesh>
                 </group>
             </HoverHighlight>
         </group>
