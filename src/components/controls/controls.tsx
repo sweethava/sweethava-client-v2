@@ -1,16 +1,14 @@
 'use client'
 
 import { OrbitControls } from "@react-three/drei"
-import { useAppDispatch, useAppSelector } from "../../hooks/storeHooks"
-import { useFrame, useThree } from "@react-three/fiber"
+import { useAppSelector } from "../../hooks/storeHooks"
+import { useThree } from "@react-three/fiber"
 import { Vector3 } from "three"
 import { useEffect, useRef } from "react"
 import { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
-import { lerp } from "three/src/math/MathUtils.js"
-import { GameInitialTargetPosition } from "../../config/gameConfig"
+import { GameCameraZoomSpeed, GameInitialTargetPosition } from "../../config/gameConfig"
 import gsap from "gsap"
 const Controls = () => {
-    const dispatch = useAppDispatch()
     const { lockCamera, cameraPosition, cameraTargetPosition, zoom } = useAppSelector(store => store.game)
     const controls = useRef<OrbitControlsImpl>(null!)
     const { camera } = useThree()
@@ -19,7 +17,7 @@ const Controls = () => {
         gsap.to(
             controls.current.target,
             {
-                duration: 1,
+                duration: GameCameraZoomSpeed,
                 x: cameraTargetPosition[0],
                 y: cameraTargetPosition[1],
                 z: cameraTargetPosition[2],
@@ -33,7 +31,8 @@ const Controls = () => {
         gsap.to(
             camera.position,
             {
-                duration: 1,
+                duration: GameCameraZoomSpeed,
+                onUpdate: controls.current.update,
                 x: cameraPosition[0],
                 y: cameraPosition[1],
                 z: cameraPosition[2],
@@ -45,7 +44,8 @@ const Controls = () => {
         gsap.to(
             camera,
             {
-                duration: 1,
+                duration: GameCameraZoomSpeed,
+                onUpdate: controls.current.update,
                 zoom: zoom
             }
         )

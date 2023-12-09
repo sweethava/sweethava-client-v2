@@ -20,9 +20,15 @@ const HoverHighlight = ({ children, onClick, disabled = false }: PropsWithChildr
     return (
         <Select
             enabled={hovered}
-            onPointerEnter={() => !disabled ? setHovered(true) : null}
+            onPointerEnter={(e) => {
+                e.stopPropagation()
+                !disabled ? setHovered(true) : null
+            }}
             onPointerOut={() => setHovered(false)}
-            onClick={onClick}
+            onClick={(e) => {
+                e.stopPropagation()
+                onClick ? onClick() : null
+            }}
         >
             {children}
         </Select>

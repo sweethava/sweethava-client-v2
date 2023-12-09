@@ -1,17 +1,19 @@
 'use client'
 
-import { useGLTF } from "@react-three/drei"
 import { GetBookMaterial } from "../../materials/bookMaterial"
 import { CSMaterial, JSMaterial, NodeMaterial, ReactImageMaterial, TSImageMaterial } from "../../materials/imageMaterial"
+import useModel from "../../hooks/modelHooks"
+import { useAppDispatch } from "../../hooks/storeHooks"
 import { useEffect } from "react"
-import { SetMaterials } from "../../utils/materials"
+import { roomLoaded } from "../../store/loadingStore"
 
 const Room = () => {
     // @ts-ignore
-    const { nodes, materials } = useGLTF("gltf/room2.glb")
+    const { nodes, materials } = useModel("/gltf/room2.glb")
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
-        SetMaterials(materials)
+        dispatch(roomLoaded())
     }, [])
 
     return (
@@ -35,24 +37,6 @@ const Room = () => {
                 material={materials.Wood}
                 position={[-0.943, 0.617, 0.127]}
             />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <group position={[0.324, 1.434, -0.952]}>
                 <mesh
                     castShadow

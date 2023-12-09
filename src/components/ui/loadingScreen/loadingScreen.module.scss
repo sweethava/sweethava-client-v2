@@ -1,0 +1,27 @@
+.loading {
+    position: fixed;
+    z-index: 110;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--bg-regular);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    .title {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: var(--fz-h5);
+    }
+
+    .text {
+        font-size: var(--fz-larger);
+        text-transform: lowercase;
+        color: var(--text-grey-color);
+    }
+
+}

@@ -1,6 +1,7 @@
 'use client'
 
 import { useAppSelector } from '../../../hooks/storeHooks'
+import CameraShotScreen from '../cameraShotScreen/cameraShotScreen'
 import CloseInteractionPanel from '../closeInteractionPanel/closeInteractionPanel'
 import styles from './gameUI.module.scss'
 
@@ -10,6 +11,7 @@ const GameUI = () => {
     return (
         <div className={styles.ui}>
             {showGoBack ? <CloseInteractionPanel /> : null}
+            <CameraShotScreen />
         </div>
     )
 }

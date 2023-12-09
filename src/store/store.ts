@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import GameSlice from './gameStore'
-// ...
+import LoadingSlice from './loadingStore'
 
 export const store = configureStore({
     reducer: {
-        game: GameSlice
+        game: GameSlice,
+        loading: LoadingSlice,
     },
 })
 

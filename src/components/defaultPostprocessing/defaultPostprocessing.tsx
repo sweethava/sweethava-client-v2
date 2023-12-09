@@ -1,12 +1,11 @@
 'use client'
 
-import { EffectComposer, Noise, SSAO } from "@react-three/postprocessing"
-import { BlendFunction } from 'postprocessing'
+import { Bloom, EffectComposer, GodRays, Noise } from "@react-three/postprocessing"
 
 const DefaultPostprocessing = () => {
     return (
         <EffectComposer>
-            <Noise opacity={0.02} />
+            <Bloom luminanceThreshold={0} mipmapBlur luminanceSmoothing={0.0} intensity={0.1} />
         </EffectComposer>
     )
 }
