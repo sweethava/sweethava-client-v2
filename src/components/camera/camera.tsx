@@ -22,7 +22,7 @@ const Camera = () => {
         if (!interactiveMode) {
             dispatch(setIsOnCamera(true))
             dispatch(setLockCamera(true))
-            dispatch(setZoom(2000 * zoomMultiplier))
+            dispatch(setZoom(1000 * zoomMultiplier))
             dispatch(setCameraTargetPosition([-0.02, 3.367, -1.747]))
             dispatch(setCameraPosition([-0.296, 2.65, 3]))
             dispatch(setInteractiveMode(true))

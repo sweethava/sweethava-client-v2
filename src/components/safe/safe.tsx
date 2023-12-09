@@ -25,7 +25,7 @@ const Safe = () => {
             dispatch(setIsOnSafe(true))
             dispatch(setHideChair(true))
             dispatch(setLockCamera(true))
-            dispatch(setZoom(2000 * zoomMultiplier))
+            dispatch(setZoom(1000 * zoomMultiplier))
             dispatch(setCameraTargetPosition([-1.252, 1.6, 1.372]))
             dispatch(setCameraPosition([0, 1.9, 0]))
             dispatch(setInteractiveMode(true))

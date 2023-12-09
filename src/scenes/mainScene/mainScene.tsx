@@ -61,9 +61,7 @@ const MainScene = () => {
 
         const { innerWidth, innerHeight } = window
 
-        if (innerHeight > innerWidth) {
-            dispatch(setZoomMultiplier(0.3))
-        }
+        dispatch(setZoomMultiplier(innerWidth / innerHeight))
     }, [])
 
     useEffect(() => {
@@ -108,14 +106,5 @@ const MainScene = () => {
         </div>
     )
 }
-
-useGLTF.preload('/gltf/room.glb')
-useGLTF.preload('/gltf/desktop.glb')
-useGLTF.preload('/gltf/laptop.glb')
-useGLTF.preload('/gltf/phone.glb')
-useGLTF.preload('/gltf/camera.glb')
-useGLTF.preload('/gltf/chair.glb')
-useGLTF.preload('/gltf/safe.glb')
-useGLTF.preload('/gltf/book.glb')
 
 export default MainScene

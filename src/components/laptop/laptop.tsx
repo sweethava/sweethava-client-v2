@@ -23,7 +23,7 @@ const Laptop = () => {
             dispatch(setIsOnLaptop(true))
             dispatch(setHideChair(true))
             dispatch(setLockCamera(true))
-            dispatch(setZoom(1500 * zoomMultiplier))
+            dispatch(setZoom(900 * zoomMultiplier))
             dispatch(setCameraTargetPosition([-1.535, 2, -1.478]))
             dispatch(setCameraPosition([4, 4, 4]))
             dispatch(setInteractiveMode(true))

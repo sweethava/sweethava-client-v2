@@ -2,6 +2,7 @@
 
 import { Select } from "@react-three/postprocessing"
 import { PropsWithChildren, useEffect, useState } from "react"
+import { useAppSelector } from "../../hooks/storeHooks"
 
 interface HoverHighlightProps {
     onClick?: () => any,
@@ -10,6 +11,8 @@ interface HoverHighlightProps {
 
 const HoverHighlight = ({ children, onClick, disabled = false }: PropsWithChildren<HoverHighlightProps>) => {
     const [hovered, setHovered] = useState(false)
+    const { isMobile } = useAppSelector(store => store.loading)
+    const { interactiveMode } = useAppSelector(store => store.game)
 
     useEffect(() => {
         if (disabled) {
@@ -19,7 +22,7 @@ const HoverHighlight = ({ children, onClick, disabled = false }: PropsWithChildr
 
     return (
         <Select
-            enabled={hovered}
+            enabled={hovered || isMobile && !interactiveMode}
             onPointerEnter={(e) => {
                 e.stopPropagation()
                 !disabled ? setHovered(true) : null

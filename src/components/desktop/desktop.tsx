@@ -23,8 +23,8 @@ const Desktop = () => {
             dispatch(setIsOnDesktop(true))
             dispatch(setHideChair(true))
             dispatch(setLockCamera(true))
-            dispatch(setZoom(1267 * zoomMultiplier))
-            dispatch(setCameraTargetPosition([-0.296, 2.7, -1.708]))
+            dispatch(setZoom(600 * zoomMultiplier))
+            dispatch(setCameraTargetPosition([-0.296, 2.65, -1.708]))
             dispatch(setCameraPosition([-0.296, 2.65, 3]))
             dispatch(setInteractiveMode(true))
 

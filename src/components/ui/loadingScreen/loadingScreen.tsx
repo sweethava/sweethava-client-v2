@@ -6,7 +6,7 @@ import styles from './loadingScreen.module.scss'
 const LoadingScreen = () => {
     const { isBookLoaded, isCameraLoaded, isChairLoaded, isDesktopLoaded, isLaptopLoaded, isPhoneLoaded, isRoomLoaded, isSafeLoaded } = useAppSelector(store => store.loading)
 
-    if (isBookLoaded && isCameraLoaded && isChairLoaded && isDesktopLoaded && isLaptopLoaded && isPhoneLoaded && isRoomLoaded && isSafeLoaded) {
+    if (isBookLoaded && isCameraLoaded && isChairLoaded && isDesktopLoaded && isLaptopLoaded && isPhoneLoaded && true && isSafeLoaded) {
         return null
     } else {
         return (
