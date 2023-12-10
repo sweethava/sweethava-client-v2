@@ -24,7 +24,7 @@ const Camera = () => {
             dispatch(setLockCamera(true))
             dispatch(setZoom(1000 * zoomMultiplier))
             dispatch(setCameraTargetPosition([-0.02, 3.367, -1.747]))
-            dispatch(setCameraPosition([-0.296, 2.65, 3]))
+            dispatch(setCameraPosition([-0.296, 3.5, 3]))
             dispatch(setInteractiveMode(true))
 
             setTimeout(() => {

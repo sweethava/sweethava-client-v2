@@ -11,9 +11,12 @@ interface CounterState {
     isOnCamera: boolean,
     isOnSafe: boolean,
     isOnBook: boolean,
+    isOnConsole: boolean,
     cameraShot: boolean,
     showPicture: boolean,
     hideChair: boolean,
+    hideDesktop: boolean,
+    hidePlant: boolean,
     cameraPosition: [number, number, number],
     cameraTargetPosition: [number, number, number],
     lockCamera: boolean,
@@ -30,9 +33,12 @@ const initialState: CounterState = {
     isOnCamera: false,
     isOnSafe: false,
     isOnBook: false,
+    isOnConsole: false,
     cameraShot: false,
     showPicture: false,
     hideChair: false,
+    hideDesktop: false,
+    hidePlant: false,
     cameraPosition: GameInitialPosition,
     cameraTargetPosition: GameInitialTargetPosition,
     lockCamera: false,
@@ -64,6 +70,9 @@ export const gameSlice = createSlice({
         setIsOnBook: (state, action: PayloadAction<boolean>) => {
             state.isOnBook = action.payload
         },
+        setIsOnConsole: (state, action: PayloadAction<boolean>) => {
+            state.isOnConsole = action.payload
+        },
         setCameraShot: (state, action: PayloadAction<boolean>) => {
             state.cameraShot = action.payload
         },
@@ -72,6 +81,12 @@ export const gameSlice = createSlice({
         },
         setHideChair: (state, action: PayloadAction<boolean>) => {
             state.hideChair = action.payload
+        },
+        setHideDesktop: (state, action: PayloadAction<boolean>) => {
+            state.hideDesktop = action.payload
+        },
+        setHidePlant: (state, action: PayloadAction<boolean>) => {
+            state.hidePlant = action.payload
         },
         setCameraPosition: (state, action: PayloadAction<[number, number, number]>) => {
             state.cameraPosition = action.payload
@@ -97,7 +112,7 @@ export const gameSlice = createSlice({
     },
 })
 
-export const { setIsOnDesktop, setIsOnLaptop, setIsOnPhone, setIsOnCamera, setIsOnSafe, setIsOnBook, setCameraShot, setShowPicture, setHideChair, setCameraPosition, setLockCamera, setZoom, setCameraTargetPosition, setShowGoBack, setInteractiveMode, setZoomMultiplier } = gameSlice.actions
+export const { setIsOnDesktop, setIsOnLaptop, setIsOnPhone, setIsOnCamera, setIsOnSafe, setIsOnBook, setIsOnConsole, setCameraShot, setShowPicture, setHideChair, setHideDesktop, setHidePlant, setCameraPosition, setLockCamera, setZoom, setCameraTargetPosition, setShowGoBack, setInteractiveMode, setZoomMultiplier } = gameSlice.actions
 
 export const getCameraPosition = (state: RootState) => state.game.cameraPosition
 export const getZoomMultiplier = (state: RootState) => state.game.zoomMultiplier

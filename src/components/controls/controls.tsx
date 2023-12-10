@@ -53,15 +53,16 @@ const Controls = () => {
 
     useEffect(() => {
         controls.current.enabled = !lockCamera
+        controls.current.enableRotate = !lockCamera
     }, [lockCamera])
 
     return (
         <OrbitControls
             makeDefault
-            minAzimuthAngle={0}
-            maxAzimuthAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 3}
-            maxPolarAngle={Math.PI / 2}
+            minAzimuthAngle={lockCamera ? -1000 : 0}
+            maxAzimuthAngle={lockCamera ? 1000 : Math.PI / 2}
+            minPolarAngle={lockCamera ? -1000 : Math.PI / 3}
+            maxPolarAngle={lockCamera ? 1000 : Math.PI / 2}
             enableZoom={false}
             enablePan={false}
             zoomSpeed={0.3}

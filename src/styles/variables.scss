@@ -64,8 +64,7 @@ $basic-dark: #100d38;
     --rad-large: 1.4rem;
 }
 
-// Colors
-:root {
+@mixin Dark {
     // Border
     --border-regular: rgba(255, 255, 255, 0.2);
     --border-dark: rgba(255, 255, 255, 0.6);
@@ -123,6 +122,76 @@ $basic-dark: #100d38;
     // Apply
     color: var(--text-regular-color);
     color-scheme: dark;
+}
+
+@mixin Light {
+    // Border
+    --border-regular: #{transparentize($basic-dark, 0.92)};
+
+    // Background
+    --bg-regular: #fff;
+    --bg-transparent: rgba(255, 255, 255, 0.8);
+    --bg-grey: #{transparentize($basic-dark, 0.96)};
+    --bg-grey-dark: #{transparentize($basic-dark, 0.92)};
+    --bg-grey-light: #{transparentize($basic-dark, 0.97)};
+    --bg-backdrop: #{transparentize($basic-dark, 0.8)};
+
+    // Switcher
+    --switcher-bg: var(--bg-grey);
+    --switcher-active-bg: var(--bg-regular);
+
+    // Toggler
+    --toggler-bg: var(--bg-regular);
+
+    // Text colors
+    --text-regular-color: #1f2022;
+    --text-grey-color: #{transparentize($basic-dark, 0.4)};
+    --text-greylight-color: #{transparentize($basic-dark, 0.6)};
+
+    // Theme color
+    --theme: #{$color};
+    --theme-dark: #{darken($color, 10%)};
+    --theme-light: #{lighten($color, 10%)};
+    --theme-focus: #{transparentize($color, 0.7)};
+    --theme-opacity: #{transparentize($color, 0.9)};
+
+    // Theme orange
+    --orange: #{$orange};
+    --orange-dark: #{darken($orange, 10%)};
+    --orange-light: #{lighten($orange, 10%)};
+    --orange-focus: #{transparentize($orange, 0.7)};
+    --orange-opacity: #{transparentize($orange, 0.9)};
+
+    // Theme red
+    --red: #{$red};
+    --red-dark: #{darken($red, 10%)};
+    --red-light: #{lighten($red, 10%)};
+    --red-focus: #{transparentize($red, 0.7)};
+    --red-opacity: #{transparentize($red, 0.9)};
+
+    // Theme green
+    --green: #{$green};
+    --green-dark: #{darken($green, 10%)};
+    --green-light: #{lighten($green, 10%)};
+    --green-focus: #{transparentize($green, 0.7)};
+    --green-opacity: #{transparentize($green, 0.9)};
+
+    // Apply
+    color: var(--text-regular-color);
+    color-scheme: light;
+}
+
+// Colors
+:root {
+    @include Dark()
+}
+
+.dark {
+    @include Dark()
+}
+
+.light {
+    @include Light()
 }
 
 .redTheme,

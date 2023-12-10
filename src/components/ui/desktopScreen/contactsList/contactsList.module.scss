@@ -1,0 +1,47 @@
+.list {
+
+    .link {
+        display: flex;
+        background: var(--bg-grey);
+        border-radius: 20px;
+        padding: 26px 32px;
+        position: relative;
+        color: var(--text-regular-color);
+        transition: 0.2s;
+
+        &:hover {
+            background: var(--theme);
+        }
+
+        .externalIcon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            color: var(--text-grey-color);
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+
+            .icon {
+                display: flex;
+                margin-right: 20px;
+                color: var(--text-grey-color);
+            }
+
+            .title {
+                font-weight: 600;
+            }
+
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+    }
+
+}

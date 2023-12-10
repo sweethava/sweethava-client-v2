@@ -1,0 +1,1 @@
+export const ConsoleSteamLink = 'https://steamcommunity.com/id/sweethava/'

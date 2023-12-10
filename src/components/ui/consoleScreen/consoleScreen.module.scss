@@ -1,0 +1,51 @@
+.screen {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-regular-color);
+    height: 100%;
+    padding: 20px;
+    font-size: 24px;
+
+    .bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        img {
+            object-fit: cover;
+        }
+
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+
+        .icon {
+            display: flex;
+            font-size: 140px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 12px);
+        }
+
+        .title {
+            font-weight: 600;
+            font-size: 32px;
+        }
+
+        .text {
+            color: var(--text-grey-color);
+        }
+
+    }
+
+}

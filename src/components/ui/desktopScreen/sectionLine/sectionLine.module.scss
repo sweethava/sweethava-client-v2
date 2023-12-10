@@ -1,0 +1,44 @@
+.item {
+    padding: 80px 0;
+    display: flex;
+    align-items: flex-start;
+
+    &:not(:last-child) {
+        border-bottom: 2px solid var(--border-regular);
+    }
+
+    .number {
+        counter-increment: sections;
+        width: 100px;
+        padding-right: 30px;
+        font-size: 42px;
+        font-weight: 600;
+        line-height: 1;
+        color: var(--text-grey-color);
+        position: sticky;
+        top: 80px;
+
+        &::before {
+            content: "0" counter(sections) ".";
+        }
+
+    }
+
+    .title {
+        width: 330px;
+        padding-right: 30px;
+        font-size: 42px;
+        font-weight: 600;
+        line-height: 1;
+        position: sticky;
+        top: 80px;
+    }
+
+    .content {
+        width: 0;
+        flex-grow: 1;
+        font-size: 22px;
+        padding-top: 5px;
+    }
+
+}

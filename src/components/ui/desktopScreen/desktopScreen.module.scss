@@ -1,0 +1,10 @@
+.wrapper {
+    padding: 0 75px;
+    font-size: 30px;
+    counter-reset: sections;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+}

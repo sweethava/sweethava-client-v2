@@ -1,4 +1,4 @@
-import { MeshStandardMaterial, RepeatWrapping, Vector2 } from "three"
+import { MeshStandardMaterial, RepeatWrapping } from "three"
 import { TLoader } from "../utils/loaders"
 import { GameEnvIntensity } from "../config/gameConfig"
 

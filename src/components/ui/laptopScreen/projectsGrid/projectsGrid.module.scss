@@ -1,0 +1,122 @@
+.wrapper {
+    display: flex;
+    align-items: flex-start;
+
+    .sidebar {
+        width: 50%;
+        padding-right: 40px;
+        position: sticky;
+        top: 50px;
+
+        .title {
+            line-height: 1.2;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .content {
+            margin-bottom: 15px;
+        }
+
+        .scrollDown {
+            display: flex;
+            align-items: center;
+            color: var(--text-grey-color);
+
+            .text {
+                font-weight: 500;
+            }
+
+            .icon {
+                display: flex;
+                margin-left: 10px;
+            }
+
+        }
+
+    }
+
+    .body {
+        width: 50%;
+
+        .grid {
+
+            .item {
+                display: block;
+                color: var(--text-regular-color);
+                position: relative;
+                border-radius: 20px;
+                overflow: hidden;
+                height: 300px;
+                border: 2px solid var(--border-regular);
+                transition: 0.2s;
+
+                &:hover {
+                    border-color: var(--theme);
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 30px;
+                }
+
+                .image {
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    position: absolute;
+
+                    img {
+                        object-fit: cover;
+                        height: 100%;
+                        width: 100%;
+                    }
+
+                }
+
+                .contentWrapper {
+                    display: flex;
+                    justify-content: space-between;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    z-index: 1;
+                    padding: 26px;
+                    background: linear-gradient(transparent, var(--bg-regular));
+
+                    .content {
+
+                        .title {
+                            font-weight: 600;
+                            font-size: 26px;
+                            line-height: 1;
+                            margin-bottom: 6px;
+                        }
+
+                        .text {
+                            color: var(--text-grey-color);
+                        }
+
+                    }
+
+                    .arrow {
+                        display: flex;
+                        align-items: center;
+                        padding: 0 10px;
+                        border-radius: 40px;
+                        backdrop-filter: blur(var(--blur));
+                        background: var(--bg-grey);
+                        border: 2px solid var(--border-regular);
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

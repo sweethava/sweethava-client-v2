@@ -10,8 +10,6 @@ const CameraShotScreen = () => {
     const { showPicture } = useAppSelector(store => store.game)
     const classes = clsx(styles.wrapper, showPicture ? styles.show : null)
 
-    console.log(classes)
-
     return (
         <div className={classes}>
             <div className={styles.image}>

@@ -26,7 +26,7 @@ const Book = () => {
             dispatch(setHideChair(true))
             dispatch(setLockCamera(true))
             dispatch(setZoom(1200 * zoomMultiplier))
-            dispatch(setCameraTargetPosition([-1.2, 1.854, 0.129]))
+            dispatch(setCameraTargetPosition([-1.15, 1.854, 0.129]))
             dispatch(setCameraPosition([0, 18, 0]))
             dispatch(setInteractiveMode(true))
 

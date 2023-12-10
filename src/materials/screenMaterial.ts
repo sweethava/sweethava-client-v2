@@ -11,5 +11,5 @@ export const ScreenDisabledMaterial = new MeshStandardMaterial({
 })
 export const ScreenEnabledMaterial = new MeshStandardMaterial({
     ...ScreenMaterialBase,
-    color: "#fff"
+    color: "#000"
 })

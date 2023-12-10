@@ -1,12 +1,11 @@
 .wrapper {
-    width: 828px;
-    height: 530px;
-    border-radius: 5px;
+    width: 835px;
+    height: 540px;
+    border-radius: 10px;
     overflow: hidden;
     opacity: 0;
     transition: 1s;
     overflow: auto;
-    background: red;
 
     &.show {
         opacity: 1;

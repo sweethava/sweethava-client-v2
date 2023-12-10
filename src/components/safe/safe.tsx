@@ -27,7 +27,7 @@ const Safe = () => {
             dispatch(setLockCamera(true))
             dispatch(setZoom(1000 * zoomMultiplier))
             dispatch(setCameraTargetPosition([-1.252, 1.6, 1.372]))
-            dispatch(setCameraPosition([0, 1.9, 0]))
+            dispatch(setCameraPosition([0, 1.9, 1.1]))
             dispatch(setInteractiveMode(true))
 
             setTimeout(() => {
@@ -75,12 +75,6 @@ const Safe = () => {
                         receiveShadow
                         geometry={nodes.Circle023_1.geometry}
                         material={materials.Gold}
-                    />
-                    <mesh
-                        castShadow
-                        receiveShadow
-                        geometry={nodes.Circle023_2.geometry}
-                        material={materials.Web}
                     />
                 </group>
                 <group

@@ -3,7 +3,7 @@
 import { Html } from '@react-three/drei'
 import styles from './phone.module.scss'
 import { useAppDispatch, useAppSelector } from '../../hooks/storeHooks'
-import { setCameraPosition, setCameraTargetPosition, setInteractiveMode, setIsOnPhone, setLockCamera, setShowGoBack, setZoom } from '../../store/gameStore'
+import { setCameraPosition, setCameraTargetPosition, setHideDesktop, setInteractiveMode, setIsOnPhone, setLockCamera, setShowGoBack, setZoom } from '../../store/gameStore'
 import { GameCameraZoomSpeed } from '../../config/gameConfig'
 import HoverHighlight from '../hoverHighlight/hoverHighlight'
 import { ScreenDisabledMaterial, ScreenEnabledMaterial } from '../../materials/screenMaterial'
@@ -11,6 +11,7 @@ import clsx from 'clsx'
 import useModel from '../../hooks/modelHooks'
 import { useEffect } from 'react'
 import { phoneLoaded } from '../../store/loadingStore'
+import PhoneScreen from '../ui/phoneScreen/phoneScreen'
 
 const Phone = () => {
     // @ts-ignore
@@ -20,11 +21,12 @@ const Phone = () => {
 
     const onOpen = () => {
         if (!interactiveMode) {
+            dispatch(setHideDesktop(true))
             dispatch(setIsOnPhone(true))
             dispatch(setLockCamera(true))
             dispatch(setZoom(2000 * zoomMultiplier))
             dispatch(setCameraTargetPosition([0.071, 2.189, -1.677]))
-            dispatch(setCameraPosition([0, 6, -1]))
+            dispatch(setCameraPosition([-1, 6, 1]))
             dispatch(setInteractiveMode(true))
 
             setTimeout(() => {
@@ -58,18 +60,11 @@ const Phone = () => {
                         <Html
                             className={clsx(styles.wrapper, isOnPhone && showGoBack ? styles.show : null)}
                             transform
-                            position={[-0.023, 0, -0.06]}
+                            position={[0, 0, -0.027]}
                             rotation-x={-Math.PI / 2}
-                            scale={isOnPhone ? 0.015 : 0}
+                            scale={isOnPhone ? 0.0145 : 0}
                         >
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
+                            <PhoneScreen />
                         </Html>
                     </mesh>
                 </group>

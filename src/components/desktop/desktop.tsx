@@ -9,14 +9,18 @@ import styles from './desktop.module.scss'
 import clsx from "clsx"
 import { ScreenDisabledMaterial, ScreenEnabledMaterial } from "../../materials/screenMaterial"
 import useModel from "../../hooks/modelHooks"
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import { desktopLoaded } from "../../store/loadingStore"
+import DesktopScreen from "../ui/desktopScreen/desktopScreen"
+import { Group } from "three"
+import gsap from 'gsap'
 
 const Desktop = () => {
     // @ts-ignore
     const { nodes, materials } = useModel("/gltf/display.glb")
-    const { interactiveMode, isOnDesktop, zoomMultiplier } = useAppSelector(store => store.game)
+    const { interactiveMode, isOnDesktop, zoomMultiplier, hideDesktop } = useAppSelector(store => store.game)
     const dispatch = useAppDispatch()
+    const groupRef = useRef<Group>(null!)
 
     const onOpen = () => {
         if (!interactiveMode) {
@@ -38,8 +42,20 @@ const Desktop = () => {
         dispatch(desktopLoaded())
     }, [])
 
+    useEffect(() => {
+        if (groupRef.current) {
+            gsap.to(groupRef.current.position, {
+                duration: GameCameraZoomSpeed,
+                z: hideDesktop ? -1 : 0
+            })
+        }
+    }, [hideDesktop])
+
     return (
-        <group dispose={null}>
+        <group
+            dispose={null}
+            ref={groupRef}
+        >
             <HoverHighlight
                 disabled={interactiveMode}
                 onClick={onOpen}
@@ -62,14 +78,7 @@ const Desktop = () => {
                             position={[0.012, 0.435, 0]}
                             scale={isOnDesktop ? 0.0345 : 0}
                         >
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
+                            <DesktopScreen />
                         </Html>
                     </mesh>
                 </group>

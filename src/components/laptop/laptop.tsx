@@ -11,6 +11,7 @@ import clsx from "clsx"
 import useModel from "../../hooks/modelHooks"
 import { useEffect } from 'react'
 import { laptopLoaded } from '../../store/loadingStore'
+import LaptopScreen from '../ui/laptopScreen/laptopScreen'
 
 const Laptop = () => {
     // @ts-ignore
@@ -66,17 +67,10 @@ const Laptop = () => {
                         <Html
                             className={clsx(styles.wrapper, isOnLaptop ? styles.show : null)}
                             transform
-                            position={[0.001, 0.226, 0]}
+                            position={[0.001, 0.230, 0]}
                             scale={isOnLaptop ? 0.031 : 0}
                         >
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
-                            <h1>Test</h1>
+                            <LaptopScreen />
                         </Html>
                     </mesh>
                 </group>

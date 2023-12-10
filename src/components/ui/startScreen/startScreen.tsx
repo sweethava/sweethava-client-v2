@@ -8,9 +8,9 @@ const StartScreen = () => {
     const [started, setStarted] = useState(false)
 
     const click = () => {
-        const ambientAudio = new Audio('/sounds/ambient.mp3')
-        ambientAudio.loop = true
-        ambientAudio.play()
+        // const ambientAudio = new Audio('/sounds/ambient.mp3')
+        // ambientAudio.loop = true
+        // ambientAudio.play()
 
         setStarted(true)
     }

@@ -18,38 +18,22 @@ import StartScreen from '../../components/ui/startScreen/startScreen'
 import { useDetectGPU, useGLTF } from '@react-three/drei'
 import { gpuLoaded, setIsMobile } from '../../store/loadingStore'
 import { setZoom, setZoomMultiplier } from '../../store/gameStore'
-
-const RoomComponent = dynamic(() => import('@/components/room/room'), {
-    ssr: false
-})
-const LaptopComponent = dynamic(() => import('@/components/laptop/laptop'), {
-    ssr: false
-})
-const DesktopComponent = dynamic(() => import('@/components/desktop/desktop'), {
-    ssr: false
-})
-const PhoneComponent = dynamic(() => import('@/components/phone/phone'), {
-    ssr: false
-})
-const CameraComponent = dynamic(() => import('@/components/camera/camera'), {
-    ssr: false
-})
-const ChairComponent = dynamic(() => import('@/components/chair/chair'), {
-    ssr: false
-})
-const SafeComponent = dynamic(() => import('@/components/safe/safe'), {
-    ssr: false
-})
-const BookComponent = dynamic(() => import('@/components/book/book'), {
-    ssr: false
-})
+import Desktop from '@/components/desktop/desktop'
+import Plants from '@/components/plants/plants'
+import Room from '@/components/room/room'
+import Laptop from '@/components/laptop/laptop'
+import Phone from '@/components/phone/phone'
+import Camera from '@/components/camera/camera'
+import Chair from '@/components/chair/chair'
+import Safe from '@/components/safe/safe'
+import Book from '@/components/book/book'
+import Props from '@/components/props/props'
+import HeavyPlants from '../../components/heavyPlants/heavyPlants'
+import Console from '../../components/console/console'
 
 const MainScene = () => {
     const { zoomMultiplier } = useAppSelector(store => store.game)
     const { isGpuLoaded } = useAppSelector(store => store.loading)
-    const Room = useMemo(() => {
-        return <RoomComponent />
-    }, [])
     const GPUTier = useDetectGPU()
     const dispatch = useAppDispatch()
 
@@ -70,7 +54,6 @@ const MainScene = () => {
 
     return (
         <div className={styles.scene}>
-            <LoadingScreen />
             <Suspense>
                 <Canvas
                     orthographic
@@ -85,14 +68,18 @@ const MainScene = () => {
                         isGpuLoaded ?
                             <>
                                 <SelectionBound>
-                                    {Room}
-                                    <DesktopComponent />
-                                    <LaptopComponent />
-                                    <PhoneComponent />
-                                    <CameraComponent />
-                                    <ChairComponent />
-                                    <SafeComponent />
-                                    <BookComponent />
+                                    <Room />
+                                    <Props />
+                                    <Plants />
+                                    <HeavyPlants />
+                                    <Desktop />
+                                    <Laptop />
+                                    <Phone />
+                                    <Camera />
+                                    <Chair />
+                                    <Safe />
+                                    <Book />
+                                    <Console />
                                 </SelectionBound>
                                 <DefaultEnvironment />
                             </> : null

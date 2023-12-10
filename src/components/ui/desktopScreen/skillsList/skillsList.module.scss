@@ -1,0 +1,16 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+
+    .item {
+        width: 50%;
+        margin-bottom: 10px;
+
+        &:before {
+            content: '- ';
+            color: var(--text-grey-color);
+        }
+
+    }
+
+}
