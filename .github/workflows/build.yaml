@@ -2,10 +2,16 @@ name: Build Project
 on: [push]
 jobs: 
   Build:
-    runs-on: 'ubuntu-latest'
+    runs-on: ubuntu-latest
     steps:
-      - name: 'Get files'
-        uses: 'actions/checkout@v3'
-      - run: 'npm ci'
-      - name: 'Try to build'
-        run: 'npm run build'
+      - name: Get files
+        uses: actions/checkout@v3
+      - name: Cache deps
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: node-modules-${{ hashFiles('**/package-lock.json') }}
+      - name: Install deps
+        run: npm ci
+      - name: Try to build
+        run: npm run build
