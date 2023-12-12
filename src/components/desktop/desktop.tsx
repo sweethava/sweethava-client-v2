@@ -14,13 +14,10 @@ import { desktopLoaded } from "../../store/loadingStore"
 import DesktopScreen from "../ui/desktopScreen/desktopScreen"
 import { Group } from "three"
 import gsap from 'gsap'
-import { useThree } from "@react-three/fiber"
 
 const Desktop = () => {
-    // @ts-ignore
     const { nodes, materials } = useModel("/gltf/display.glb")
     const { interactiveMode, isOnDesktop, zoomMultiplier, hideDesktop } = useAppSelector(store => store.game)
-    const { gl } = useThree()
     const dispatch = useAppDispatch()
     const groupRef = useRef<Group>(null!)
 

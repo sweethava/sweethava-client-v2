@@ -14,7 +14,6 @@ import { phoneLoaded } from '../../store/loadingStore'
 import PhoneScreen from '../ui/phoneScreen/phoneScreen'
 
 const Phone = () => {
-    // @ts-ignore
     const { nodes, materials } = useModel("/gltf/phone.glb");
     const { interactiveMode, isOnPhone, showGoBack, zoomMultiplier } = useAppSelector(store => store.game)
     const dispatch = useAppDispatch()

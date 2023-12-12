@@ -3,7 +3,6 @@
 import useModel from "../../hooks/modelHooks"
 
 const HeavyPlants = () => {
-    // @ts-ignore
     const { nodes, materials } = useModel('/gltf/heavyPlants.glb')
 
     return (

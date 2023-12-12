@@ -8,7 +8,6 @@ import { propsLoaded } from "../../store/loadingStore"
 import { Material } from "three"
 
 const Props = () => {
-    // @ts-ignore
     const { nodes, materials } = useModel('/gltf/props.glb')
     const dispatch = useAppDispatch()
     const bookMaterials = useMemo(() => {

@@ -12,13 +12,15 @@ import { firstPageImage, secondPageImage } from "../../materials/openedBookMater
 import { bookLoaded } from "../../store/loadingStore"
 
 const Book = () => {
-    // @ts-ignore
     const { nodes, materials } = useModel('/gltf/book.glb')
     const { interactiveMode, isOnBook, zoomMultiplier } = useAppSelector(store => store.game)
     const dispatch = useAppDispatch()
     const material = useMemo(() => {
         return GetBookMaterial()
     }, [])
+
+    console.log(nodes);
+
 
     const onOpen = () => {
         if (!interactiveMode) {

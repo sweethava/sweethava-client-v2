@@ -11,7 +11,6 @@ import { useDispatch } from "react-redux"
 import { chairLoaded } from "../../store/loadingStore"
 
 const Chair = () => {
-    // @ts-ignore
     const { nodes, materials } = useModel("/gltf/chair.glb")
     const { hideChair } = useAppSelector(store => store.game)
     const defaultYPosition = 0

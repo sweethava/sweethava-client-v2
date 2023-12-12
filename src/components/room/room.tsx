@@ -1,6 +1,5 @@
 'use client'
 
-import { GetBookMaterial } from "../../materials/bookMaterial"
 import { CSMaterial, JSMaterial, NodeMaterial, ReactImageMaterial, TSImageMaterial } from "../../materials/imageMaterial"
 import useModel from "../../hooks/modelHooks"
 import { useAppDispatch } from "../../hooks/storeHooks"
@@ -8,7 +7,6 @@ import { useEffect } from "react"
 import { roomLoaded } from "../../store/loadingStore"
 
 const Room = () => {
-    // @ts-ignore
     const { nodes, materials } = useModel("/gltf/room.glb")
     const dispatch = useAppDispatch()
 

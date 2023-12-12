@@ -1,19 +1,33 @@
 import { useGLTF } from "@react-three/drei"
 import { useEffect } from "react"
 import { SetMaterials } from "../utils/materials"
+import { BufferGeometry, Material, Object3D } from "three"
 
-const useModel = (href: string) => {
+type ExtendedObject3D = Object3D & {
+    geometry?: BufferGeometry
+}
+type ModelReturnType = {
+    nodes: {
+        [key: string]: ExtendedObject3D
+    },
+    materials: {
+        [key: string]: Material
+    }
+}
+
+const useModel = (href: string): ModelReturnType => {
     const data = useGLTF(href)
 
     useEffect(() => {
-        // @ts-ignore
         if (data.materials) {
-            // @ts-ignore
             SetMaterials(data.materials)
         }
     }, [])
 
-    return data
+    return {
+        nodes: data.nodes,
+        materials: data.materials
+    }
 }
 
 export default useModel

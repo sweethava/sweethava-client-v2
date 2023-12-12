@@ -14,7 +14,6 @@ import { useEffect } from 'react'
 import { consoleLoaded } from '../../store/loadingStore'
 
 const Console = () => {
-    // @ts-ignore
     const { nodes, materials } = useModel('/gltf/console.glb')
     const { interactiveMode, isOnConsole, zoomMultiplier } = useAppSelector(store => store.game)
     const dispatch = useAppDispatch()

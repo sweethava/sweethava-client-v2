@@ -14,7 +14,6 @@ import { laptopLoaded } from '../../store/loadingStore'
 import LaptopScreen from '../ui/laptopScreen/laptopScreen'
 
 const Laptop = () => {
-    // @ts-ignore
     const { nodes, materials } = useModel("/gltf/laptop.glb")
     const { interactiveMode, isOnLaptop, zoomMultiplier } = useAppSelector(store => store.game)
     const dispatch = useAppDispatch()

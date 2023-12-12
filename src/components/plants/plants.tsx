@@ -8,7 +8,6 @@ import { Group } from "three"
 import gsap from "gsap"
 
 const Plants = () => {
-    // @ts-ignore
     const { nodes, materials } = useModel('/gltf/plants.glb')
     const dispath = useAppDispatch()
     const { hidePlant } = useAppSelector(store => store.game)

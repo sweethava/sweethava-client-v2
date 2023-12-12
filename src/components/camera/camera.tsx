@@ -11,7 +11,6 @@ import { useEffect } from "react"
 import { cameraLoaded } from "../../store/loadingStore"
 
 const Camera = () => {
-    // @ts-ignore
     const { nodes, materials } = useModel('/gltf/camera.glb')
     const { interactiveMode, zoomMultiplier } = useAppSelector(store => store.game)
     const dispatch = useAppDispatch()

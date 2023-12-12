@@ -11,7 +11,6 @@ import gsap from "gsap"
 import { safeLoaded } from "../../store/loadingStore"
 
 const Safe = () => {
-    // @ts-ignore
     const { nodes, materials } = useModel('/gltf/safe.glb')
     const { interactiveMode, isOnSafe, zoomMultiplier } = useAppSelector(store => store.game)
     const dispatch = useAppDispatch()
