@@ -4,9 +4,9 @@ import { useAppSelector } from '../../../hooks/storeHooks'
 import styles from './loadingScreen.module.scss'
 
 const LoadingScreen = () => {
-    const { isBookLoaded, isCameraLoaded, isChairLoaded, isDesktopLoaded, isLaptopLoaded, isPhoneLoaded, isRoomLoaded, isSafeLoaded, isPropsLoaded, isPlantsLoaded } = useAppSelector(store => store.loading)
+    const { isBookLoaded, isCameraLoaded, isChairLoaded, isDesktopLoaded, isLaptopLoaded, isPhoneLoaded, isRoomLoaded, isSafeLoaded, isPropsLoaded, isPlantsLoaded, isConsoleLoaded, hideLoading } = useAppSelector(store => store.loading)
 
-    if (isBookLoaded && isCameraLoaded && isChairLoaded && isDesktopLoaded && isLaptopLoaded && isPhoneLoaded && isRoomLoaded && isPlantsLoaded && isPropsLoaded && isSafeLoaded) {
+    if (isBookLoaded && isCameraLoaded && isChairLoaded && isDesktopLoaded && isLaptopLoaded && isPhoneLoaded && isRoomLoaded && isPlantsLoaded && isPropsLoaded && isSafeLoaded && isConsoleLoaded || hideLoading) {
         return null
     } else {
         return (

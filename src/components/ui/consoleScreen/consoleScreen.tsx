@@ -15,6 +15,7 @@ const ConsoleScreen = () => {
                     src={bgImage.src}
                     fill
                     alt='CS:GO'
+                    loading='eager'
                 />
             </div>
             <div className={styles.content}>

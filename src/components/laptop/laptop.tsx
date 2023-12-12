@@ -68,7 +68,7 @@ const Laptop = () => {
                             className={clsx(styles.wrapper, isOnLaptop ? styles.show : null)}
                             transform
                             position={[0.001, 0.230, 0]}
-                            scale={isOnLaptop ? 0.031 : 0}
+                            scale={isOnLaptop ? 0.028 : 0}
                         >
                             <LaptopScreen />
                         </Html>

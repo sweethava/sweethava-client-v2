@@ -12,8 +12,10 @@ interface LoadingState {
     isBookLoaded: boolean,
     isPropsLoaded: boolean,
     isPlantsLoaded: boolean,
+    isConsoleLoaded: boolean,
     isMobile: boolean,
     isGpuLoaded: boolean,
+    hideLoading: boolean,
 }
 
 const initialState: LoadingState = {
@@ -27,8 +29,10 @@ const initialState: LoadingState = {
     isBookLoaded: false,
     isPropsLoaded: false,
     isPlantsLoaded: false,
+    isConsoleLoaded: false,
     isMobile: false,
     isGpuLoaded: false,
+    hideLoading: false
 }
 
 export const loadingSlice = createSlice({
@@ -65,8 +69,14 @@ export const loadingSlice = createSlice({
         plantsLoaded: (state) => {
             state.isPlantsLoaded = true
         },
+        consoleLoaded: (state) => {
+            state.isConsoleLoaded = true
+        },
         setIsMobile: (state, action: PayloadAction<boolean>) => {
             state.isMobile = action.payload
+        },
+        hideLoading: (state) => {
+            state.hideLoading = true
         },
         gpuLoaded: (state) => {
             state.isGpuLoaded = true
@@ -74,6 +84,6 @@ export const loadingSlice = createSlice({
     },
 })
 
-export const { roomLoaded, desktopLoaded, laptopLoaded, phoneLoaded, cameraLoaded, chairLoaded, safeLoaded, bookLoaded, propsLoaded, plantsLoaded, setIsMobile, gpuLoaded } = loadingSlice.actions
+export const { roomLoaded, desktopLoaded, laptopLoaded, phoneLoaded, cameraLoaded, chairLoaded, safeLoaded, bookLoaded, propsLoaded, plantsLoaded, setIsMobile, gpuLoaded, consoleLoaded, hideLoading } = loadingSlice.actions
 
 export default loadingSlice.reducer

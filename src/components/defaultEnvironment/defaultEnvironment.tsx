@@ -11,7 +11,7 @@ const DefaultEnvironment = () => {
             <Environment preset="lobby" blur={1} />
             <color attach="background" args={['#f7ebd1']} />
 
-            <directionalLight position={[5, 5, 6]} castShadow intensity={1.5} shadow-mapSize={2048} shadow-bias={-0.001}>
+            <directionalLight position={[5, 5, 6]} castShadow={!isMobile} intensity={1.5} shadow-mapSize={2048} shadow-bias={-0.001}>
                 <orthographicCamera attach="shadow-camera" args={[-8.5, 8.5, 8.5, -8.5, 0.1, 20]} />
             </directionalLight>
 

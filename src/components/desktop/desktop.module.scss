@@ -4,8 +4,9 @@
     border-radius: 6px;
     opacity: 0;
     transition: 1s;
-    overflow: auto;
+    overflow: scroll;
     touch-action: auto !important;
+    pointer-events: all !important;
 
     &.show {
         opacity: 1;

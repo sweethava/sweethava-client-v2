@@ -10,6 +10,8 @@ import HoverHighlight from '../hoverHighlight/hoverHighlight'
 import styles from './console.module.scss'
 import { Html } from '@react-three/drei'
 import ConsoleScreen from '../ui/consoleScreen/consoleScreen'
+import { useEffect } from 'react'
+import { consoleLoaded } from '../../store/loadingStore'
 
 const Console = () => {
     // @ts-ignore
@@ -32,6 +34,10 @@ const Console = () => {
             }, 1000 * GameCameraZoomSpeed)
         }
     }
+
+    useEffect(() => {
+        dispatch(consoleLoaded())
+    }, [])
 
     return (
         <group dispose={null}>

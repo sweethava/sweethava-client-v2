@@ -63,6 +63,8 @@ const Camera = () => {
     }
 
     useEffect(() => {
+        shotAudio.load()
+        gigachadAudio.load()
         dispatch(cameraLoaded())
     }, [])
 

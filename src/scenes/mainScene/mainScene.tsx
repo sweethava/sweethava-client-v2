@@ -3,17 +3,13 @@
 import styles from './mainScene.module.scss'
 import { Canvas } from "@react-three/fiber"
 import DefaultEnvironment from '../../components/defaultEnvironment/defaultEnvironment'
-import { Suspense, useEffect, useMemo } from 'react'
+import { Suspense, useEffect } from 'react'
 import { GameCameraZoom, GameInitialPosition } from '../../config/gameConfig'
 import SelectionBound from '../../components/selectionBound/selectionBound'
 import { Vector3 } from 'three'
 import Controls from '../../components/controls/controls'
 import GameUI from '../../components/ui/gameUI/gameUI'
-import dynamic from 'next/dynamic'
-import FrameLimiter from '../../components/frameLimiter/frameLimiter'
-import DefaultPostprocessing from '../../components/defaultPostprocessing/defaultPostprocessing'
 import { useAppDispatch, useAppSelector } from '../../hooks/storeHooks'
-import LoadingScreen from '../../components/ui/loadingScreen/loadingScreen'
 import StartScreen from '../../components/ui/startScreen/startScreen'
 import { useDetectGPU, useGLTF } from '@react-three/drei'
 import { gpuLoaded, setIsMobile } from '../../store/loadingStore'
@@ -63,6 +59,7 @@ const MainScene = () => {
                         position: new Vector3(...GameInitialPosition),
                         zoom: GameCameraZoom * zoomMultiplier,
                     }}
+                    eventPrefix="offset"
                 >
                     {
                         isGpuLoaded ?

@@ -17,6 +17,7 @@ const CameraShotScreen = () => {
                     src={myImage.src}
                     alt='Literally me'
                     fill
+                    loading='eager'
                 />
             </div>
         </div>

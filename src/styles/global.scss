@@ -1,10 +1,8 @@
 html {
     font-size: var(--rem);
-    overflow-y: scroll;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     background: var(--bg-regular);
-    overflow-x: hidden;
 }
 
 body {
@@ -12,6 +10,7 @@ body {
     margin: 0;
     -webkit-tap-highlight-color: transparent;
     height: 100%;
+    overflow: hidden;
 }
 
 a {

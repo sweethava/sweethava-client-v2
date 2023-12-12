@@ -5,6 +5,7 @@ import ContactsList from './contactsList/contactsList'
 import styles from './desktopScreen.module.scss'
 import ExperienceList from './experienceList/experienceList'
 import FirstSlide from './firstSlide/firstSlide'
+import GamesList from './gamesList/gamesList'
 import SectionLine from './sectionLine/sectionLine'
 import SkillsList from './skillsList/skillsList'
 
@@ -31,6 +32,11 @@ const DesktopScreen = () => {
                 title='Contacts'
             >
                 <ContactsList />
+            </SectionLine>
+            <SectionLine
+                title='Games I play'
+            >
+                <GamesList />
             </SectionLine>
         </div>
     )

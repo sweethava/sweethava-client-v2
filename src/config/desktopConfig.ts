@@ -1,3 +1,11 @@
+import gtfoImage from '/public/images/gtfo.jpg'
+import counterStrikeImage from '/public/images/counterStrike.jpg'
+import battlefield4Image from '/public/images/battlefield4.jpg'
+import heartsOfIron4Image from '/public/images/heartsOfIron4.jpg'
+import satisfactoryImage from '/public/images/satisfactory.jpg'
+import rainbowSixSiegeImage from '/public/images/rainbowSixSiege.jpg'
+import valorantImage from '/public/images/valorant.jpg'
+
 export const DesktopAboutMeText = `My name is Zhan, I am a web developer with more than 4 years of experience. During this time, I have developed many different projects, starting with the simplest sites, ending with online stores and dashboards with document generation, chat and kanban boards. I like to work on complex projects and am not afraid of difficulties.`
 export const DesktopSkillsList = [
     'JavaScript',
@@ -7,6 +15,7 @@ export const DesktopSkillsList = [
     'PostgreSQL',
     'PHP',
     'C#',
+    'Blender',
     'HTML & CSS',
     'Docker',
     'TypeScript',
@@ -23,6 +32,8 @@ export const DesktopSkillsList = [
     'jQuery',
     'Git',
     'Webpack',
+    'GitHub Actions',
+    'Jest',
 ]
 export const DesktopWorkExperience = [
     {
@@ -80,5 +91,42 @@ export const DesktopWorkExperience = [
                 text: 'LuxFM'
             },
         ]
+    },
+]
+export const DesktopGamesList = [
+    {
+        image: gtfoImage,
+        title: 'GTFO',
+        link: 'https://store.steampowered.com/app/493520/GTFO/'
+    },
+    {
+        image: counterStrikeImage,
+        title: 'Counter Strike 2',
+        link: 'https://store.steampowered.com/app/730/CounterStrike_2/'
+    },
+    {
+        image: heartsOfIron4Image,
+        title: 'Hearts of Iron IV',
+        link: 'https://store.steampowered.com/app/394360/Hearts_of_Iron_IV/'
+    },
+    {
+        image: battlefield4Image,
+        title: 'Battlefield 4',
+        link: 'https://store.steampowered.com/app/1238860/Battlefield_4/'
+    },
+    {
+        image: satisfactoryImage,
+        title: 'Satisfactory',
+        link: 'https://store.steampowered.com/app/526870/Satisfactory/'
+    },
+    {
+        image: rainbowSixSiegeImage,
+        title: 'Rainbow Six Siege',
+        link: 'https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/'
+    },
+    {
+        image: valorantImage,
+        title: 'Valorant',
+        link: 'https://youtu.be/XsIvrRflLEk?si=ZJV2zfTjzTfjDf9b'
     },
 ]

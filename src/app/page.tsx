@@ -6,6 +6,9 @@ import LoadingScreen from "../components/ui/loadingScreen/loadingScreen"
 const Scene = dynamic(() => import('../scenes/mainScene/mainScene'), {
 	ssr: false
 })
+// const PlaygroundScene = dynamic(() => import('../scenes/playgroundScene/playgroundScene'), {
+// 	ssr: false
+// })
 
 export default function Home() {
 	return (

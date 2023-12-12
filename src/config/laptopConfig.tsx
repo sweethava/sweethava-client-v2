@@ -1,8 +1,9 @@
-import veterImage from '/public/images/veter2.jpg'
-import gatewayImage from '/public/images/gateway1.jpg'
-import moneyImage from '/public/images/money2.jpg'
-import flowerImage from '/public/images/flower2.jpg'
-import radioImage from '/public/images/radio.jpg'
+import veterImage from '/public/images/veter.jpg'
+import gatewayImage from '/public/images/gateway.jpg'
+import yorkCreditImage from '/public/images/yorkCredit.jpg'
+import flowLoveImage from '/public/images/flowLove.jpg'
+import radioCityImage from '/public/images/radioCity.jpg'
+import gFactoryImage from '/public/images/gFactory.jpg'
 
 export const LaptopLatestProjects = [
     {
@@ -10,34 +11,47 @@ export const LaptopLatestProjects = [
         title: 'Veter Vremeni',
         text: 'Watches Store',
         image: veterImage,
-        link: 'https://vetervremeni.kz'
+        link: 'https://vetervremeni.kz',
+        width: 2
     },
     {
         tags: ['Front-end', 'Back-end', 'UI/UX'],
         title: 'Gateway',
-        text: 'China Supply Company',
+        text: 'Supply Company',
         image: gatewayImage,
-        link: 'https://gatewaysrc.com'
-    },
-    {
-        tags: ['Front-end', 'Back-end'],
-        title: 'York Credit',
-        text: 'Debt consolidation toronto',
-        image: moneyImage,
-        link: 'https://yorkcreditservices.com'
+        link: 'https://gatewaysrc.com',
+        width: 1
     },
     {
         tags: ['Front-end', 'Back-end', 'UI/UX'],
         title: 'Flow Love',
         text: 'Online flower shop',
-        image: flowerImage,
-        link: 'https://flowlove.ru'
+        image: flowLoveImage,
+        link: 'https://flowlove.ru',
+        width: 1
+    },
+    {
+        tags: ['Front-end', 'Back-end'],
+        title: 'York Credit',
+        text: 'Debt consolidation toronto',
+        image: yorkCreditImage,
+        link: 'https://yorkcreditservices.com',
+        width: 2
     },
     {
         tags: ['Front-end', 'Back-end', 'UI/UX'],
         title: 'Radio City',
         text: 'Radio website',
-        image: radioImage,
-        link: 'https://cityradio.kz'
+        image: radioCityImage,
+        link: 'https://cityradio.kz',
+        width: 2
+    },
+    {
+        tags: ['Front-end', 'Back-end', 'UI/UX'],
+        title: 'G-Factory',
+        text: 'Watches Store',
+        image: gFactoryImage,
+        link: 'https://g-factory.kz',
+        width: 1
     },
 ]
