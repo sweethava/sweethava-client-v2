@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/drei": "^9.89.0",
-    "@react-three/fiber": "^8.15.11",
+    "@react-three/drei": "^9.92.1",
+    "@react-three/fiber": "^8.15.12",
     "@react-three/postprocessing": "^2.15.11",
     "@reduxjs/toolkit": "^2.0.1",
     "@types/three": "^0.158.3",

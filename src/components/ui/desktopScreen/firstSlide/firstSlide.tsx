@@ -13,6 +13,7 @@ const FirstSlide = () => {
                         alt='Zhan Ilyas'
                         src={myImage.src}
                         fill
+                        loading='eager'
                     />
                 </div>
             </div>
