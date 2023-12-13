@@ -2,6 +2,7 @@ import '@/styles/variables.scss'
 import '@/styles/global.scss'
 import { MainFont } from '../utils/fonts'
 import { Metadata, Viewport } from 'next'
+import ExternalScripts from '../components/externalScripts/externalScripts'
 
 export const metadata: Metadata = {
 	title: 'Zhan Ilyas',
@@ -28,7 +29,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={MainFont.className}>{children}</body>
+			<body className={MainFont.className}>
+				{children}
+				<ExternalScripts />
+			</body>
 		</html>
 	)
 }
