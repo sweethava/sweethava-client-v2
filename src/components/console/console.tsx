@@ -23,7 +23,7 @@ const Console = () => {
             dispatch(setHidePlant(true))
             dispatch(setIsOnConsole(true))
             dispatch(setLockCamera(true))
-            dispatch(setZoom(2000 * zoomMultiplier))
+            dispatch(setZoom(1700 * zoomMultiplier))
             dispatch(setCameraTargetPosition([-1.546, 2.467, 1.187]))
             dispatch(setCameraPosition([0, 6, 2]))
             dispatch(setInteractiveMode(true))

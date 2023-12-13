@@ -19,9 +19,6 @@ const Book = () => {
         return GetBookMaterial()
     }, [])
 
-    console.log(nodes);
-
-
     const onOpen = () => {
         if (!interactiveMode) {
             dispatch(setIsOnBook(true))

@@ -23,7 +23,7 @@ const Phone = () => {
             dispatch(setHideDesktop(true))
             dispatch(setIsOnPhone(true))
             dispatch(setLockCamera(true))
-            dispatch(setZoom(2000 * zoomMultiplier))
+            dispatch(setZoom(1700 * zoomMultiplier))
             dispatch(setCameraTargetPosition([0.071, 2.189, -1.677]))
             dispatch(setCameraPosition([-1, 6, 1]))
             dispatch(setInteractiveMode(true))
