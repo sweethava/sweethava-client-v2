@@ -1,6 +1,7 @@
 import { FaTelegramPlane, FaLinkedinIn } from 'react-icons/fa'
 import { HiMail, HiPhoneIncoming } from 'react-icons/hi'
-import { RiInstagramFill } from 'react-icons/ri'
+import { RiInstagramFill, RiMoneyDollarCircleFill } from 'react-icons/ri'
+import { SiBuymeacoffee } from 'react-icons/si'
 
 export const AppEmail = 'ilyasov.zhan@gmail.com'
 export const AppSocial = [
@@ -28,5 +29,17 @@ export const AppSocial = [
         icon: <HiPhoneIncoming />,
         title: 'Phone',
         link: `tel:+77024041504`
+    },
+]
+export const DonationLinks = [
+    {
+        link: 'https://www.buymeacoffee.com/sweethava',
+        title: 'Buy Me a Coffee',
+        icon: <SiBuymeacoffee />
+    },
+    {
+        link: 'https://boosty.to/sweethava',
+        title: 'Boosty',
+        icon: <RiMoneyDollarCircleFill />
     },
 ]

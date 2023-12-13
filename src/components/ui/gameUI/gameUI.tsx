@@ -3,6 +3,7 @@
 import { useAppSelector } from '../../../hooks/storeHooks'
 import CameraShotScreen from '../cameraShotScreen/cameraShotScreen'
 import CloseInteractionPanel from '../closeInteractionPanel/closeInteractionPanel'
+import DonationScreen from '../donationScreen/donationScreen'
 import styles from './gameUI.module.scss'
 
 const GameUI = () => {
@@ -12,6 +13,7 @@ const GameUI = () => {
         <div className={styles.ui}>
             {showGoBack ? <CloseInteractionPanel /> : null}
             <CameraShotScreen />
+            <DonationScreen />
         </div>
     )
 }

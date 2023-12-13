@@ -20,7 +20,7 @@ $basic-dark: #100d38;
     --blur: 60px;
 
     // General sizes
-    --rem: 0.8vw;
+    --rem: 1vw;
 
     // Text sizes
     --fz-h1: 4rem;
@@ -224,25 +224,15 @@ $basic-dark: #100d38;
 @media (max-width: 768px) {
 
     :root {
-        --container: 48rem;
-        --rem: 1.8vw;
-        --fz-h1: 4.2rem;
+        --rem: 2.5vw;
     }
 
 }
 
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (min-width: 1600px) {
 
     :root {
-        --rem: 1vw;
-    }
-
-}
-
-@media (min-width: 1200px) and (max-width: 1500px) {
-
-    :root {
-        --rem: 0.7vw;
+        --rem: 20px;
     }
 
 }
