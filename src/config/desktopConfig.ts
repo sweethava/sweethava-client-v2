@@ -10,6 +10,7 @@ export const DesktopAboutMeText = `My name is Zhan, I am a web developer with mo
 export const DesktopSkillsList = [
     'JavaScript',
     'Redux Toolkit',
+    'Zustand',
     'Nest.js',
     'SCSS',
     'PostgreSQL',
@@ -34,6 +35,8 @@ export const DesktopSkillsList = [
     'Webpack',
     'GitHub Actions',
     'Jest',
+    'Unreal Engine',
+    'Wordpress',
 ]
 export const DesktopWorkExperience = [
     {
