@@ -1,6 +1,6 @@
 'use client'
 
-import { DesktopAboutMeText } from '../../../config/desktopConfig'
+import { DesktopAboutMeText, DesktopBackEndSkillsList, DesktopFrontEndSkillsList, DesktopGeneralSkillsList } from '../../../config/desktopConfig'
 import ContactsList from './contactsList/contactsList'
 import styles from './desktopScreen.module.scss'
 import ExperienceList from './experienceList/experienceList'
@@ -13,31 +13,48 @@ const DesktopScreen = () => {
     return (
         <div className={styles.wrapper}>
             <FirstSlide />
+
             <SectionLine
                 title='About me'
             >
                 <p>{DesktopAboutMeText}</p>
             </SectionLine>
+
             <SectionLine
-                title='My skills'
+                title='General skills'
             >
-                <SkillsList />
+                <SkillsList skills={DesktopGeneralSkillsList} />
             </SectionLine>
+
+            <SectionLine
+                title='Front-end skills'
+            >
+                <SkillsList skills={DesktopFrontEndSkillsList} />
+            </SectionLine>
+
+            <SectionLine
+                title='Back-end skills'
+            >
+                <SkillsList skills={DesktopBackEndSkillsList} />
+            </SectionLine>
+
             <SectionLine
                 title='Experience'
             >
                 <ExperienceList />
             </SectionLine>
+
             <SectionLine
                 title='Contacts'
             >
                 <ContactsList />
             </SectionLine>
-            <SectionLine
+
+            {/* <SectionLine
                 title='Games I play'
             >
                 <GamesList />
-            </SectionLine>
+            </SectionLine> */}
         </div>
     )
 }

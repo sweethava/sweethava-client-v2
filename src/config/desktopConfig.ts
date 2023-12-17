@@ -38,6 +38,60 @@ export const DesktopSkillsList = [
     'Unreal Engine',
     'Wordpress',
 ]
+
+export const DesktopGeneralSkillsList = [
+    'JavaScript',
+    'TypeScript',
+    'Blender',
+    'UI/UX',
+    'Jest',
+    'GitHub Actions',
+    'CI/CD',
+    'Webpack',
+    'Git',
+    'Docker',
+    'C#',
+    'PHP',
+    'Unreal Engine',
+    'Linux',
+    'Figma',
+    'Electron',
+]
+
+export const DesktopFrontEndSkillsList = [
+    'HTML & CSS,SCSS',
+    'React',
+    'Next.js',
+    'Redux Toolkit',
+    'Zustand',
+    'MobX',
+    'Three.js',
+    'R3 Fiber',
+    'R3 Postprocessing',
+    'R3 Drei',
+    'R3 Rapier',
+    'jQuery',
+    'GSAP',
+    'React Spring',
+]
+
+export const DesktopBackEndSkillsList = [
+    'Node.js',
+    'Nest.js',
+    'Express',
+    'SQL',
+    'PostgreSQL',
+    'MySQL',
+    'MongoDB',
+    'Prisma ORM',
+    'Sequelize ORM',
+    'Redis',
+    'Nodemailer',
+    'Telegram Bot',
+    'Telegram API',
+]
+
+
 export const DesktopWorkExperience = [
     {
         title: 'Full Stack Web Developer',

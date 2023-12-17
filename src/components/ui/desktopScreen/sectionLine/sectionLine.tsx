@@ -10,8 +10,10 @@ interface SectionLineProps {
 const SectionLine = ({ title, children }: PropsWithChildren<SectionLineProps>) => {
     return (
         <div className={styles.item}>
-            <div className={styles.number}></div>
-            <div className={styles.title}>{title}</div>
+            <div className={styles.sticky}>
+                <div className={styles.number}></div>
+                <div className={styles.title}>{title}</div>
+            </div>
             <div className={styles.content}>{children}</div>
         </div>
     )
