@@ -13,7 +13,7 @@ export const AppSocial = [
     {
         icon: <FaLinkedinIn />,
         title: 'LinkedIn',
-        link: 'https://www.linkedin.com/in/zhan-ilyas-1a0637250/'
+        link: 'https://www.linkedin.com/in/sweethava/'
     },
     {
         icon: <RiInstagramFill />,

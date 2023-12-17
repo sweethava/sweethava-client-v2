@@ -6,6 +6,7 @@ import ExternalScripts from '../components/externalScripts/externalScripts'
 import thumbnailImage from '/public/images/thumbnail.jpg'
 
 export const metadata: Metadata = {
+	metadataBase: new URL('https://sweethava.me/'),
 	title: 'Zhan Ilyas',
 	description: 'Full-Stack Developer',
 	other: {
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 		apple: '/favicon/favicon.ico',
 	},
 	openGraph: {
+		url: 'https://sweethava.me/',
 		title: 'Zhan Ilyas',
 		description: 'Full-Stack Developer',
 		siteName: 'Zhan Ilyas',
@@ -44,12 +46,11 @@ export const metadata: Metadata = {
 			}
 		],
 	},
-	themeColor: 'dark',
-	colorScheme: 'dark'
 }
 
 export const viewport: Viewport = {
-	themeColor: 'black',
+	themeColor: 'dark',
+	colorScheme: 'dark',
 	initialScale: 1,
 	userScalable: false
 }
