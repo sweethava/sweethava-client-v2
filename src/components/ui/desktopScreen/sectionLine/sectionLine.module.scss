@@ -7,31 +7,31 @@
         border-bottom: 2px solid var(--border-regular);
     }
 
-    .number {
-        counter-increment: sections;
-        width: 100px;
-        padding-right: 30px;
+    .sticky {
+        display: flex;
         font-size: 42px;
         font-weight: 600;
-        line-height: 1;
-        color: var(--text-grey-color);
+        line-height: 1.2;
         position: sticky;
         top: 80px;
+        padding-right: 80px;
 
-        &::before {
-            content: "0" counter(sections) ".";
+        .number {
+            counter-increment: sections;
+            width: 100px;
+            padding-right: 30px;
+            color: var(--text-grey-color);
+
+            &::before {
+                content: "0" counter(sections) ".";
+            }
+
         }
 
-    }
+        .title {
+            width: 260px;
+        }
 
-    .title {
-        width: 330px;
-        padding-right: 30px;
-        font-size: 42px;
-        font-weight: 600;
-        line-height: 1;
-        position: sticky;
-        top: 80px;
     }
 
     .content {
